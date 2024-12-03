@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="Login.css">
+    <style>
+        /* Add style for the error message */
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form action="Login" method="get">
+                <div class="input-group">
+                    <input type="text" id="username" name="username" required>
+                    <label for="username">Username</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+            <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
+            </div>
+
+            <!-- Error message container -->
+            <h5 class="error-message" id="error-msg">Incorrect Username/Password, Please Try Again</h5>
+        </div>
+    </div>
+
+    <script>
+        // Function to check if the "error" parameter exists in the URL
+        function checkForError() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('error')) {
+                // Show the error message if the error parameter exists
+                document.getElementById('error-msg').style.display = 'block';
+            }
+        }
+
+        // Call the function when the page loads
+        window.onload = checkForError;
+    </script>
+</body>
+</html>

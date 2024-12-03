@@ -1,0 +1,178 @@
+@charset "UTF-8";
+@charset "UTF-8";
+/* General Body Styles */
+body {
+    background-color:hsla(120, 49%, 85%, 0.925);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    border: 2px solid #ccc; /* Border for the whole webpage */
+    border-radius: 10px; /* Small radius for the webpage */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Navigation Styles */
+nav.nav {
+    width: 100%;
+    background-color: #4a90e2;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border: 2px solid #ccc; /* Border for the navbar */
+    border-radius: 10px; /* Small radius for the navbar */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+/* Navigation List */
+nav.nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+}
+
+nav.nav ul li {
+    margin-left: 30px;
+}
+
+nav.nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    border: 1px solid transparent; /* Default state: no visible border */
+    border-radius: 8px; /* Small radius for the nav links */
+}
+
+nav.nav ul li a:hover {
+    color: #ffeb3b;
+    transform: scale(1.1);
+    border-color: #ffeb3b; /* Show border on hover */
+}
+
+/* Dropdown Styling */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: hsl(30, 57%, 53%);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border: 2px solid #ccc; /* Border for the dropdown */
+    border-radius: 8px; /* Small radius for the dropdown */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+    border-radius: 4px; /* Small radius for dropdown links */
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Centered Hero Section */
+.hero {
+    text-align: center;
+    padding-top: 150px;
+    border: 2px solid #ccc; /* Border for the hero section */
+    border-radius: 10px; /* Small radius for the hero section */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #fff; /* Background to make the hero section pop */
+    padding: 20px; /* Spacing inside the hero section */
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: #333;
+    animation: bounceIn 2s ease-in-out;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #666;
+    animation: fadeInText 2s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeInBody {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    nav.nav ul {
+        flex-direction: column;
+    }
+
+    nav.nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .container {
+        padding: 0 20px; /* Less padding for smaller screens */
+    }
+}
